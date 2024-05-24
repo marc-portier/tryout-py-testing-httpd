@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tryout"
+version = "0.1.0"
+description = "fake project just to test how we could have a httpd in test"
+authors = ["Marc Portier <marc.portier@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.1"
+
+
+[tool.poetry.group.test.dependencies]
+requests = "^2.32.2"
+rdflib = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

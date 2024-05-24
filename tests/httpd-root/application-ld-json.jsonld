@@ -1,0 +1,10 @@
+{
+    "@context": {
+        "hello": "urn:hello:"
+    },
+    "@id": "./any",
+    "hello:to": {
+        "@value": "World!",
+        "@language": "en"
+    }
+}

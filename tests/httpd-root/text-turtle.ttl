@@ -1,0 +1,3 @@
+@prefix hello: <urn:hello:> .
+
+<any> hello:to "World!"@en.
