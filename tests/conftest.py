@@ -22,7 +22,7 @@ class TestRequestHandler(SimpleHTTPRequestHandler):
         super().__init__(request, client_address, server, directory=str(HTTPD_ROOT.absolute()))
 
 
-TestRequestHandler.extensions_map = HTTPD_EXTENSION_MAP
+TestRequestHandler.extensions_map = {**SimpleHTTPRequestHandler.extensions_map, **HTTPD_EXTENSION_MAP}
 
 
 @pytest.fixture(scope="session")
