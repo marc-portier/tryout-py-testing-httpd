@@ -4,13 +4,12 @@ from typing import Dict
 from rdflib import Graph
 
 
-RDF_MIMES={"text/turtle", "application/ld+json", }
-EXPECTED_TTL="""
+RDF_MIMES = {"text/turtle", "application/ld+json", }
+EXPECTED_TTL = """
 @prefix hello: <urn:hello:> .
 
 <http://localhost:8000/any> hello:to "World!"@en .
 """.strip()
-
 
 
 @pytest.mark.usefixtures("httpd_server_base", "all_extensions_testset")
@@ -31,4 +30,3 @@ def test_me(httpd_server_base: str, all_extensions_testset: Dict[str, str]):
             g = Graph().parse(url)
             ttl = g.serialize(format="turtle").strip()
             assert ttl == EXPECTED_TTL
-
