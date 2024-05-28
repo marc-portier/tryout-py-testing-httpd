@@ -14,6 +14,7 @@ HTTPD_EXTENSION_MAP: Dict[str, str] = {
     '.txt': 'text/plain',
     '.jsonld': 'application/ld+json',
     '.ttl': 'text/turtle',
+    '': 'text/turtle',
     '.brol': 'x-application/example+brol',
 }
 
@@ -47,4 +48,4 @@ def httpd_server_base(httpd_server: HTTPServer) -> str:
 
 @pytest.fixture(scope="session")
 def all_extensions_testset():
-    return {mime: f"{re.sub(r'[^0-9a-zA-Z]+','-', mime)}{ext}" for ext, mime in HTTPD_EXTENSION_MAP.items()}
+    return {(mime, f"{re.sub(r'[^0-9a-zA-Z]+','-', mime)}{ext}") for ext, mime in HTTPD_EXTENSION_MAP.items()}
