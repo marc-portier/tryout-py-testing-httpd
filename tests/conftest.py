@@ -14,6 +14,7 @@ HTTPD_EXTENSION_MAP: Dict[str, str] = {
     '.txt': 'text/plain',
     '.jsonld': 'application/ld+json',
     '.ttl': 'text/turtle',
+    '.brol': 'x-application/example+brol',
 }
 
 
